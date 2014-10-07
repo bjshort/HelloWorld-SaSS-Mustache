@@ -3,7 +3,7 @@ module.exports = function(grunt) {
     // Project configuration.
     grunt.initConfig({
         sass: {
-            dist: {
+            build: {
                 files: {
                     'assets/production/application.css' : 'assets/application.scss'
                 }
@@ -20,5 +20,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.registerTask('default',['watch']);
+    grunt.registerTask('buildcss',  ['sass']);
 
 };
