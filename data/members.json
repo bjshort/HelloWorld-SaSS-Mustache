@@ -1,0 +1,32 @@
+{ "members": [
+    {   "firstname": "Dave",
+        "lastname": "Webb",
+        "role": "CEO",
+        "date-started": "01/01/2010",
+        "senior": "YES"
+    },
+    {   "firstname": "Chris",
+        "lastname": "Porter",
+        "role": "CTO",
+        "date-started": "01/01/2010",
+        "senior": "YES"
+    },
+    {   "firstname": "Jez",
+        "lastname": "Balh",
+        "role": "Enterprise Architect",
+        "date-started": "01/01/2010",
+        "senior": "YES"
+    },
+    {   "firstname": "Brendan",
+        "lastname": "Short",
+        "role": "Code Monkey",
+        "date-started": "02/06/2014",
+        "senior": "NO"
+    },
+    {   "firstname": "Alex",
+        "lastname": "Ferguson",
+        "role": "Front-End Fairy",
+        "date-started": "07/02/2012",
+        "senior": "NO"
+    }
+]}

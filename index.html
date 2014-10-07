@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Mustache Sample</title>
+    <link rel="stylesheet" type="text/css" href="assets/application.css">
+</head>
+<body>
+<h1>Hello World!</h1>
+<h2>Members</h2>
+
+<div id="members">
+</div>
+
+<script src="bower_components/mustache/mustache.js"></script>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+
+<script id="members-template" type="text/template">
+    <table>
+        <thead>
+            <th>First Name</th><th>Last Name</th><th>Role</th><th>Date Started</th><th>Senior staff?</th>
+        </thead>
+        {{#members}}
+        <tr>
+            <td>{{firstname}}</td><td>{{lastname}}</td><td>{{role}}</td><td>{{date-started}}</td><td>{{senior}}</td>
+        </tr>
+        {{/members}}
+    </table>
+</script>
+
+<script>
+    $(function() {
+        $.getJSON('data/members.json', function(data) {
+            var template = $('#members-template').html();
+            var info = Mustache.to_html(template, data);
+            $('#members').html(info);
+        });
+    });
+</script>
+</body>
+</html>
