@@ -15,6 +15,6 @@ Simple Hello World app that uses npm & bower to build dependencies, SaSS, Mustac
 
 
 
---------- Dev ---------/n
+--------- Dev ---------\n
 Running './node_modules/grunt-cli/bin/grunt' 
 from the repo folder will enable grunt to 'watch' SaSS files and automatically comiple on the fly.
