@@ -15,7 +15,7 @@ Simple Hello World app that uses npm & bower to build dependencies, SaSS, Mustac
 --------- To run ---------
 - Locate repo in terminal
 - ./script/start.sh
-- visit http://0.0.0.0:9090 in your browser
+- visit http://127.0.0.1:8000 in your browser
 
 
 
