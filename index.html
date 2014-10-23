@@ -11,6 +11,35 @@
 
 <div id="members">
 </div>
+<div class="half-width block">
+  <form id="addMember">
+      <table>
+        <tr>
+          <td><label for="firstName">First name</label></td>
+          <td><input type="text" name="firstName" id="firstName" /></td>
+        </tr>
+          <tr>
+              <td><label for="lastName">Last name</label></td>
+              <td><input type="text" name="lastName" id="lastName" /></td>
+          </tr>
+          <tr>
+              <td><label for="phone">Phone</label></td>
+              <td><input type="text" name="phone" id="phone" /></td>
+          </tr>
+          <tr>
+              <td><label for="email">Email</label></td>
+              <td><input type="text" name="email" id="email" /></td>
+          </tr>
+          <tr>
+              <td><label for="password">Password</label></td>
+              <td><input type="text" name="password" id="password" /></td>
+          </tr>
+          <tr>
+              <td><button type="submit">Add member</button></td>
+          </tr>
+      </table>
+  </form>
+</div>
 
 <script src="bower_components/mustache/mustache.js"></script>
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
@@ -18,11 +47,11 @@
 <script id="members-template" type="text/template">
     <table>
         <thead>
-            <th>First Name</th><th>Last Name</th><th>Role</th><th>Date Started</th><th>Senior staff?</th>
+            <th>First Name</th><th>Last Name</th><th>Phone</th><th>Date Started</th><th>Senior staff?</th>
         </thead>
         {{#members}}
         <tr>
-            <td>{{firstname}}</td><td>{{lastname}}</td><td>{{role}}</td><td>{{date-started}}</td><td>{{senior}}</td>
+            <td>{{firstName}}</td><td>{{lastName}}</td><td>{{phone}}</td><td></td><td></td>
         </tr>
         {{/members}}
     </table>
@@ -30,11 +59,32 @@
 
 <script>
     $(function() {
-        $.getJSON('data/members.json', function(data) {
+        $.getJSON("http://127.0.0.1:8080/members", null, function(data) {
+            console.log("Got inside method");
+            console.log("Data: " + data);
             var template = $('#members-template').html();
             var info = Mustache.to_html(template, data);
             $('#members').html(info);
         });
+    });
+
+    $("#addMember").submit(function() {
+
+        var url = "http://127.0.0.1:8080/members"; // the script where you handle the form input.
+        var data = JSON.stringify($("#addMember").serialize());
+
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: data, // serializes the form's elements.
+            contentType: "application/json",
+            success: function(data)
+            {
+                alert(data); // show response
+            }
+        });
+
+        return false; // avoid to execute the actual submit of the form.
     });
 </script>
 </body>

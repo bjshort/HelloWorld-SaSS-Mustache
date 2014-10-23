@@ -23,8 +23,19 @@ html {
       background-color: $table-background-color;
       border-radius: $table-border-radius;
       padding: 3px;
-      margin: 0;
+      margin: 10px 0;
       width: 100%;
+    }
+
+    .full-width {
+       width: 100%;
+     }
+    .half-width {
+      width: 49%;
+    }
+    .block {
+      display: block;
+      margin: 10px 0;
     }
   }
 }
