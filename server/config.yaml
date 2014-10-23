@@ -3,13 +3,13 @@ database:
   driverClass: org.postgresql.Driver
 
   # the username
-  user: gdmfrontenduser
+  user: username
 
   # the password
-  password: gdmfrontenduser
+  password: password
 
   # the JDBC URL
-  url: jdbc:postgresql://localhost:5432/flex
+  url: jdbc:postgresql://localhost:5432/dbname
 
   # any properties specific to your JDBC driver:
   properties:
