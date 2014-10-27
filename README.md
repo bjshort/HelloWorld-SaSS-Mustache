@@ -10,11 +10,12 @@ Simple Hello World app that uses npm & bower to build dependencies, SaSS, Mustac
 ----- To configure local API server -----
 - Edit /server/config.yaml with correct local PostgreSQL details
 - ./scripts/migrate-db.sh 
+- Go into your database and add some stuff into your members table (Will add a smarter solution to this soon).
 
 --------- To run ---------
 - Locate repo in terminal
 - ./script/start.sh
-- visit http://0.0.0.0:9090 in your browser
+- visit http://127.0.0.1:8000 in your browser
 
 
 
